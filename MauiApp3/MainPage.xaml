@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mauiApp3="clr-namespace:MauiApp3"
+             x:Class="MauiApp3.MainPage">
+
+    <Grid RowDefinitions="*, Auto">
+        <ListView x:Name="listView" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="mauiApp3:FooItem">
+		            <mauiApp3:MyViewCell Name="{Binding Name}" Description="{Binding Description}" IsDescriptionVisible="{Binding IsDescriptionVisible}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Row="1" Text="Toggle description visibility" Clicked="ToggleDescription_OnClicked"/>
+    </Grid>
+
+</ContentPage>
